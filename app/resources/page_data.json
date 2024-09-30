@@ -2,24 +2,29 @@
     {
         "title": "Курс «Исцеляющая сила женщины»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/826359453",
+        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny",
         "children": [
             {
                 "title": "Предобучение",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/826359472",
+                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie",
                 "children": [
                     {
                         "title": "Работа с платформой",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/830979228",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie/rabota-s-platformoj",
                         "children": []
                     },
                     {
                         "title": "Подготовка к курсу",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/830979242",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie/podgotovka-k-kursu",
                         "children": []
                     },
                     {
                         "title": "12 женских диагнозов",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/830979243",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie/12-zhenskih-diagnozov",
                         "children": []
                     }
                 ]
@@ -27,35 +32,42 @@
             {
                 "title": "Модуль 1",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/826384508",
+                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1",
                 "children": [
                     {
                         "title": "Неделя 1",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384509",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-1",
                         "children": []
                     },
                     {
                         "title": "Неделя 2",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384510",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-2",
                         "children": []
                     },
                     {
                         "title": "Неделя 3",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384511",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-3",
                         "children": []
                     },
                     {
                         "title": "Неделя 4",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384512",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-4",
                         "children": []
                     },
                     {
                         "title": "Неделя 5",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826385551",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-5",
                         "children": []
                     },
                     {
                         "title": "Неделя 6",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826389874",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-6",
                         "children": []
                     }
                 ]
@@ -63,15 +75,18 @@
             {
                 "title": "Модуль 2",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/829971941",
+                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-2",
                 "children": [
                     {
                         "title": "Неделя 7",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826390182",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-2/nedelja-7",
                         "children": []
                     },
                     {
                         "title": "Неделя 8",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826389933",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-2/nedelja-8",
                         "children": []
                     }
                 ]
@@ -79,10 +94,12 @@
             {
                 "title": "Библиотека эфиров",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/829971948",
+                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/biblioteka-efirov",
                 "children": [
                     {
                         "title": "22 поток",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/907944614",
+                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/biblioteka-efirov/22-potok",
                         "children": []
                     }
                 ]
@@ -92,15 +109,18 @@
     {
         "title": "Мастер-класс «Постановка восковой свечи»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/197094748",
+        "dir": "./app/downloads/pages/master-klass-postanovka-voskovoj-svechi",
         "children": []
     },
     {
         "title": "Клуб «Погружение в своё тело»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/634060593",
+        "dir": "./app/downloads/pages/klub-pogruzhenie-v-svoe-telo",
         "children": [
             {
                 "title": "Базовые практики",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/634060602",
+                "dir": "./app/downloads/pages/klub-pogruzhenie-v-svoe-telo/bazovye-praktiki",
                 "children": []
             }
         ]
@@ -108,11 +128,13 @@
     {
         "title": "Интенсив «Интим как в 18 лет»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/863167938",
+        "dir": "./app/downloads/pages/intensiv-intim-kak-v-18-let",
         "children": []
     },
     {
         "title": "Интенсив «9 точек долголетия»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/863168048",
+        "dir": "./app/downloads/pages/intensiv-9-tochek-dolgoletija",
         "children": []
     }
 ]

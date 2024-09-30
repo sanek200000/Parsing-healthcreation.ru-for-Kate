@@ -2,7 +2,11 @@ from time import sleep
 import requests
 import json
 from bs4 import BeautifulSoup
+from helper.folders import get_path
 from helper.config import HEADERS, URL_LOGIN, URL_INDEX, DATA, COOKIES_PATH
+
+
+INDEX = "/index.html"
 
 
 class HTTPClient:
@@ -11,6 +15,7 @@ class HTTPClient:
 
 
 class HC_HTTPClient(HTTPClient):
+
     def __init__(self) -> None:
         super().__init__()
 
@@ -31,12 +36,24 @@ class HC_HTTPClient(HTTPClient):
         else:
             print("Enter with cookies.")
 
+    @staticmethod
+    def save_html(path: str, source: str) -> None:
+        """Save html text to index.html
+
+        Args:
+            path (str): path to save folder
+            source (str): html text
+        """
+        with open(path + INDEX, "w") as file:
+            file.write(source)
+
     def scrapping(
         self,
         url: str,
         website_data: list = list(),
-        path: str = "./app/downloads/pages",
-    ) -> dict:
+        path: str = "./app/downloads/pages/",
+    ) -> list[dict]:
+
         src = self._session.get(url=url, headers=HEADERS)
         print(src.status_code, url)
         soup = BeautifulSoup(src.text, "lxml")
@@ -48,15 +65,18 @@ class HC_HTTPClient(HTTPClient):
             for tr in trs:
                 cours_name = tr.find("span", class_="stream-title").text
                 course_url = "https://healthcreation.ru" + tr.get("href")
+                new_path = get_path(path, cours_name)
+                self.save_html(new_path, src.text)
                 page_data = {
                     "title": cours_name,
                     "url": course_url,
+                    "dir": new_path,
                     "children": list(),
                 }
 
                 if course_url:
                     website_data.append(page_data)
-                    self.scrapping(course_url, page_data.get("children"))
+                    self.scrapping(course_url, page_data.get("children"), new_path)
 
         """elif soup.find_all("div", class_="link title"):
 
@@ -137,5 +157,5 @@ if __name__ == "__main__":
     #    file.write(**data[1])
 
     print(data)
-    # print("\n\n")
-    # print(data[1])
+    with open("./app/resources/page_data.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
