@@ -11,12 +11,14 @@ def get_folder_name(name: str) -> str:
     Returns:
         str: folder name in english
     """
-    return slugify(name)
+    res = slugify(name)
+    return res if res else name
 
 
 if __name__ == "__main__":
     data = [
         "Курс «Исцеляющая сила женщины»",
+        "07.08.24",
         "12 женских диагнозов",
         "Неделя 1",
         "Мастер-класс «Постановка восковой свечи»",

@@ -1,8 +1,10 @@
 from time import sleep
+from random import randint as rnd
 import requests
 import json
 from bs4 import BeautifulSoup
 from helper.folders import get_path
+from helper.download_video import DownloadHLS
 from helper.config import HEADERS, URL_LOGIN, URL_INDEX, DATA, COOKIES_PATH
 
 
@@ -47,6 +49,19 @@ class HC_HTTPClient(HTTPClient):
         with open(path + INDEX, "w") as file:
             file.write(source)
 
+    def __make_magic(self, path, cours_name, course_url, src, website_data) -> None:
+        new_path = get_path(path, cours_name)
+        self.save_html(new_path, src.text)
+        page_data = {
+            "title": cours_name,
+            "url": course_url,
+            "children": list(),
+        }
+
+        if course_url:
+            website_data.append(page_data)
+            self.scrapping(course_url, page_data.get("children"), new_path)
+
     def scrapping(
         self,
         url: str,
@@ -54,6 +69,7 @@ class HC_HTTPClient(HTTPClient):
         path: str = "./app/downloads/pages/",
     ) -> list[dict]:
 
+        sleep(rnd(1, 3))
         src = self._session.get(url=url, headers=HEADERS)
         print(src.status_code, url)
         soup = BeautifulSoup(src.text, "lxml")
@@ -65,51 +81,28 @@ class HC_HTTPClient(HTTPClient):
             for tr in trs:
                 cours_name = tr.find("span", class_="stream-title").text
                 course_url = "https://healthcreation.ru" + tr.get("href")
-                new_path = get_path(path, cours_name)
-                self.save_html(new_path, src.text)
-                page_data = {
-                    "title": cours_name,
-                    "url": course_url,
-                    "dir": new_path,
-                    "children": list(),
-                }
 
-                if course_url:
-                    website_data.append(page_data)
-                    self.scrapping(course_url, page_data.get("children"), new_path)
+                self.__make_magic(path, cours_name, course_url, src, website_data)
 
-        """elif soup.find_all("div", class_="link title"):
+        elif soup.find_all("div", class_="link title"):
 
             trs = soup.find_all("div", class_="link title")
             for tr in trs:
                 cours_name = tr.text.strip().split("\t")[0]
                 course_url = "https://healthcreation.ru" + tr.get("href")
-                page_data = {
-                    "title": cours_name,
-                    "url": course_url,
-                    "children": list(),
-                }
-                website_data.append(page_data)
 
-                if course_url:
-                    page_data["children"].append(
-                        self.scrapping(course_url, website_data)
-                    )
+                self.__make_magic(path, cours_name, course_url, src, website_data)
 
         elif soup.find_all("strong", class_="redactor-inline-converted"):
 
             trs = soup.find_all("strong", class_="redactor-inline-converted")
             for tr in trs:
                 cours_name = tr.text.strip()
-                course_url = tr.find("a")
-                if course_url:
-                    page_data = {
-                        "title": cours_name,
-                        "url": course_url.get("href"),
-                        "children": list(),
-                    }
+                course_url_dirty = tr.find("a")
+                if course_url_dirty:
+                    course_url = course_url_dirty.get("href")
 
-                    page_data["children"].append(self.scrapping(course_url.get("href")))
+                    self.__make_magic(path, cours_name, course_url, src, website_data)
 
         elif soup.find("iframe", class_="vhi-iframe js--vhi-iframe"):
 
@@ -118,7 +111,7 @@ class HC_HTTPClient(HTTPClient):
             )
 
             if player_url:
-                src = self._session(player_url)
+                src = self._session.get(player_url)
                 soup = BeautifulSoup(src.text, "lxml")
 
                 trs = soup.find_all("script")
@@ -128,15 +121,16 @@ class HC_HTTPClient(HTTPClient):
                         configs_script = script.string.strip().split(
                             "window.configs = "
                         )[1]
-                        configs_dict = json.loads(configs_script)
+                        configs_dict: dict = json.loads(configs_script)
                         break
 
                 players_list_url = configs_dict.get("masterPlaylistUrl")
 
                 page_data = {"title": "players_list", "url": players_list_url}
+                website_data.append(page_data)
 
-        else:
-            return"""
+                download = DownloadHLS(players_list_url, path)
+                print(download.get_hls_video())
 
         return website_data
 
@@ -150,12 +144,5 @@ if __name__ == "__main__":
     connect = HC_HTTPClient()
     data = connect.scrapping(URL_INDEX)
 
-    # with open("./app/resources/page_data.txt", "w", encoding="utf-8") as file:
-    #    file.write(**data[0])
-
-    # with open("./app/resources/website_data.txt", "w", encoding="utf-8") as file:
-    #    file.write(**data[1])
-
-    print(data)
     with open("./app/resources/page_data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)

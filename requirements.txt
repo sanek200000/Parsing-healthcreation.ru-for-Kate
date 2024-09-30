@@ -8,3 +8,4 @@ requests==2.32.3
 soupsieve==2.6
 urllib3==2.2.3
 transliterate==1.10.2
+m3u8==6.0.0

@@ -2,105 +2,480 @@
     {
         "title": "Курс «Исцеляющая сила женщины»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/826359453",
-        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny",
         "children": [
             {
                 "title": "Предобучение",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/826359472",
-                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie",
                 "children": [
                     {
                         "title": "Работа с платформой",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/830979228",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie/rabota-s-platformoj",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Программа курса | 22 поток",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/330064853",
+                                "children": []
+                            },
+                            {
+                                "title": "Навигатор по Обучающей платформе📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403852",
+                                "children": []
+                            },
+                            {
+                                "title": "Настройка Личного кабинета на платформе📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403853",
+                                "children": []
+                            },
+                            {
+                                "title": "Как организована работа на обучающей платформе📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403854",
+                                "children": []
+                            },
+                            {
+                                "title": "Инструкция по установке Zoom для участия в видео-встречах📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403855",
+                                "children": []
+                            },
+                            {
+                                "title": "Инструкция на скачивание телеграм📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403856",
+                                "children": []
+                            },
+                            {
+                                "title": "ПРИСОЕДИНИТЬСЯ К ЧАТУ КУРСА📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403857",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Подготовка к курсу",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/830979242",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie/podgotovka-k-kursu",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "📚Что вам необходимо приготовить к курсу",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403858",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Обследование перед курсом",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403859",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Жалобы, которые могут появиться на фоне практик",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403860",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Урок 1. Как быстро происходит оздоровление и какой результат ждать",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403861",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Урок 2. Как ваше тело будет реагировать на оздоровление",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403862",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Урок 3. Особенности прохождения программы при разных состояниях",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403863",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Урок 4. Карта здоровья",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403864",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Урок 5. Практика",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403865",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "12 женских диагнозов",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/830979243",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/predobuchenie/12-zhenskih-diagnozov",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Миома",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403866",
+                                "children": []
+                            },
+                            {
+                                "title": "Эндометриоз",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403867",
+                                "children": []
+                            },
+                            {
+                                "title": "Почему у кого-то миома, у кого-то эндометриоз",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403868",
+                                "children": []
+                            },
+                            {
+                                "title": "Киста яичника",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403869",
+                                "children": []
+                            },
+                            {
+                                "title": "Полип и гиперплазия эндометрия",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403870",
+                                "children": []
+                            },
+                            {
+                                "title": "Молочница, вагинит, кольпит, воспаление, дисбактериоз",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403871",
+                                "children": []
+                            },
+                            {
+                                "title": "Спаечный процесс малого таза",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403872",
+                                "children": []
+                            },
+                            {
+                                "title": "Дисплазия шейки матки",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403873",
+                                "children": []
+                            },
+                            {
+                                "title": "Синдром истощения яичников (бесплодие, ранний климакс)",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403874",
+                                "children": []
+                            },
+                            {
+                                "title": "Синдром поликистозных яичников",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403875",
+                                "children": []
+                            },
+                            {
+                                "title": "Фиброзно-кистозная мастопатия",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403876",
+                                "children": []
+                            },
+                            {
+                                "title": "Гормональные нарушения (щитовидной железы, гипофиза, поджелудочной, надпочечников)",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315403877",
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "title": "Модуль 1",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/826384508",
-                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1",
                 "children": [
                     {
                         "title": "Неделя 1",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384509",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-1",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Пользовательское соглашение",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315408391",
+                                "children": []
+                            },
+                            {
+                                "title": "Приветствие",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315408484",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 1. Первопричины болезней📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315408503",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 2. Нарушения соединительной ткани📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315408506",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317078047",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317078070",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Неделя 2",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384510",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-2",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 1",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324044050",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 3. Эмоциональные нарушения📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679348",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 4. Стрессовые перегрузки📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679368",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679411",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679423",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Неделя 3",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384511",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-3",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 2",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324548558",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 5. Гормональные нарушения📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679441",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 6. Нарушение противоопухолевого иммунитета📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679473",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679550",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679557",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Неделя 4",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826384512",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-4",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 3",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324999774",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 7. Нарушение нервной регуляции📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679570",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 8. Нарушение кровообращения📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679577",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679584",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679586",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Неделя 5",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826385551",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-5",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 4",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324999885",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 9. Нарушение детоксикации📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679597",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 10. Энергетические нарушения📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679603",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679613",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679615",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Неделя 6",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826389874",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-1/nedelja-6",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 5",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324999886",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 11. Нарушение стабилизации тела📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679620",
+                                "children": []
+                            },
+                            {
+                                "title": "📚Практики недели",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679638",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679641",
+                                "children": []
+                            },
+                            {
+                                "title": "Модуль 1. Итоги📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679622",
+                                "children": []
+                            },
+                            {
+                                "title": "Ссылки на препараты и инструментарий курса + протоколы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679628",
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "title": "Модуль 2",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/829971941",
-                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-2",
                 "children": [
                     {
                         "title": "Неделя 7",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826390182",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-2/nedelja-7",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 6",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/325998160",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 1. История жизни📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679658",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 2. Оценка гормонального фона📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679664",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679844",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679846",
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "title": "Неделя 8",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/826389933",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/modul-2/nedelja-8",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "Итоги недели 7",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/325998165",
+                                "children": []
+                            },
+                            {
+                                "title": "Полезные ссылки",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/315425351",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 3. Оценка менструальной функции📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679806",
+                                "children": []
+                            },
+                            {
+                                "title": "Урок 4. Оценка влагалищных выделений📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679810",
+                                "children": []
+                            },
+                            {
+                                "title": "Практики недели📚",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679847",
+                                "children": []
+                            },
+                            {
+                                "title": "Дополнительные материалы",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/317679849",
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "title": "Библиотека эфиров",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/829971948",
-                "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/biblioteka-efirov",
                 "children": [
                     {
                         "title": "22 поток",
                         "url": "https://healthcreation.ru/teach/control/stream/view/id/907944614",
-                        "dir": "./app/downloads/pages/kurs-istseljajuschaja-sila-zhenschiny/biblioteka-efirov/22-potok",
-                        "children": []
+                        "children": [
+                            {
+                                "title": "07.08.24",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/333413078",
+                                "children": []
+                            },
+                            {
+                                "title": "Эфир 10.08.24",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/333529105",
+                                "children": []
+                            },
+                            {
+                                "title": "Эфир 24.08.24",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/334335926",
+                                "children": []
+                            },
+                            {
+                                "title": "Встреча с наставницами ",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/334672889",
+                                "children": []
+                            },
+                            {
+                                "title": "07.09.24",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/335141104",
+                                "children": []
+                            },
+                            {
+                                "title": "Встреча с наставницами",
+                                "url": "https://healthcreation.ru/teach/control/lesson/view/id/336391641",
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -109,32 +484,155 @@
     {
         "title": "Мастер-класс «Постановка восковой свечи»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/197094748",
-        "dir": "./app/downloads/pages/master-klass-postanovka-voskovoj-svechi",
         "children": []
     },
     {
         "title": "Клуб «Погружение в своё тело»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/634060593",
-        "dir": "./app/downloads/pages/klub-pogruzhenie-v-svoe-telo",
         "children": [
             {
                 "title": "Базовые практики",
                 "url": "https://healthcreation.ru/teach/control/stream/view/id/634060602",
-                "dir": "./app/downloads/pages/klub-pogruzhenie-v-svoe-telo/bazovye-praktiki",
-                "children": []
+                "children": [
+                    {
+                        "title": "Тряска, восьмёрка, дыхательная волна",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587693",
+                        "children": []
+                    },
+                    {
+                        "title": "Активация грудо-брюшной диафрагмы",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587695",
+                        "children": []
+                    },
+                    {
+                        "title": "Активация 8 диафрагм туловища",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587751",
+                        "children": []
+                    },
+                    {
+                        "title": "Активация нейролимфатических зон",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253972987",
+                        "children": []
+                    },
+                    {
+                        "title": "Активация нейрососудистых точек",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587716",
+                        "children": []
+                    },
+                    {
+                        "title": "Отработка сухожильного шлема головы ",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587754",
+                        "children": []
+                    },
+                    {
+                        "title": "Открытие энергетических каналов на руках и ногах",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587721",
+                        "children": []
+                    },
+                    {
+                        "title": "Переобучение стопы",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587723",
+                        "children": []
+                    },
+                    {
+                        "title": "Правильный шаг",
+                        "url": "https://healthcreation.ru/teach/control/lesson/view/id/253587744",
+                        "children": []
+                    }
+                ]
             }
         ]
     },
     {
         "title": "Интенсив «Интим как в 18 лет»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/863167938",
-        "dir": "./app/downloads/pages/intensiv-intim-kak-v-18-let",
-        "children": []
+        "children": [
+            {
+                "title": "Вступление",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324145601",
+                "children": []
+            },
+            {
+                "title": "Устраняем перекосы тела",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324145618",
+                "children": []
+            },
+            {
+                "title": "Улучшаем кровообращение",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324145626",
+                "children": []
+            },
+            {
+                "title": "Наполняемся жизненной силой",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324146155",
+                "children": []
+            }
+        ]
     },
     {
         "title": "Интенсив «9 точек долголетия»",
         "url": "https://healthcreation.ru/teach/control/stream/view/id/863168048",
-        "dir": "./app/downloads/pages/intensiv-9-tochek-dolgoletija",
-        "children": []
+        "children": [
+            {
+                "title": "Вступление",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324146194",
+                "children": []
+            },
+            {
+                "title": "Возможности при воздействии на точки",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324146195",
+                "children": []
+            },
+            {
+                "title": "Как усилить воздействие на точки",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324146196",
+                "children": []
+            },
+            {
+                "title": "Цзу сан ли",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/324146197",
+                "children": []
+            },
+            {
+                "title": "Шэнь мэнь",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329327331",
+                "children": []
+            },
+            {
+                "title": "Сань инь цзяо",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329339919",
+                "children": []
+            },
+            {
+                "title": "Шэнь цюэ",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329340095",
+                "children": []
+            },
+            {
+                "title": "Бай хуэй",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329340260",
+                "children": []
+            },
+            {
+                "title": "Тай си",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329341251",
+                "children": []
+            },
+            {
+                "title": "Ян мень",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329341346",
+                "children": []
+            },
+            {
+                "title": "Хэ гу",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329341476",
+                "children": []
+            },
+            {
+                "title": "Юн цуань",
+                "url": "https://healthcreation.ru/teach/control/lesson/view/id/329341479",
+                "children": []
+            }
+        ]
     }
 ]
