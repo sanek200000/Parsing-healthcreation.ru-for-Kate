@@ -15,22 +15,32 @@ class HC_HTTPClient(HTTPClient):
         super().__init__()
 
         with open(COOKIES_PATH, "r", encoding="utf-8") as file:
-            cookies_dict = json.load(file)
+            try:
+                cookies_dict = json.load(file)
 
-            self._session.cookies.update(cookies_dict)
-            response = self._session.get(url=URL_INDEX, headers=HEADERS)
+                self._session.cookies.update(cookies_dict)
+                response = self._session.get(url=URL_INDEX, headers=HEADERS)
+                status_code = response.status_code
+            except:
+                status_code = 400
 
-        if response.status_code > 201:
+        if status_code > 201:
             response = self._session.post(url=URL_LOGIN, headers=HEADERS, data=DATA)
             self.dump_cookies()
             print("Enter with login.")
+        else:
+            print("Enter with cookies.")
 
-        print("Enter with cookies.")
-
-    def scrapping(self, url: str) -> dict:
+    def scrapping(
+        self,
+        url: str,
+        website_data: list = list(),
+        path: str = "./app/downloads/pages",
+    ) -> dict:
         src = self._session.get(url=url, headers=HEADERS)
         print(src.status_code, url)
         soup = BeautifulSoup(src.text, "lxml")
+        page_data = None
 
         if soup.find("table", class_="stream-table"):
 
@@ -45,9 +55,10 @@ class HC_HTTPClient(HTTPClient):
                 }
 
                 if course_url:
-                    page_data["children"].append(self.scrapping(course_url))
+                    website_data.append(page_data)
+                    self.scrapping(course_url, page_data.get("children"))
 
-        elif soup.find_all("div", class_="link title"):
+        """elif soup.find_all("div", class_="link title"):
 
             trs = soup.find_all("div", class_="link title")
             for tr in trs:
@@ -58,9 +69,12 @@ class HC_HTTPClient(HTTPClient):
                     "url": course_url,
                     "children": list(),
                 }
+                website_data.append(page_data)
 
                 if course_url:
-                    page_data["children"].append(self.scrapping(course_url))
+                    page_data["children"].append(
+                        self.scrapping(course_url, website_data)
+                    )
 
         elif soup.find_all("strong", class_="redactor-inline-converted"):
 
@@ -102,16 +116,7 @@ class HC_HTTPClient(HTTPClient):
                 page_data = {"title": "players_list", "url": players_list_url}
 
         else:
-            return
-
-        return page_data
-
-    def get_data(self, url: str) -> list[dict]:
-        website_data = list()
-
-        # Инициализация первого уровня парсинга
-        main_page = self.scrapping(url)
-        website_data.append(main_page)
+            return"""
 
         return website_data
 
@@ -123,5 +128,14 @@ class HC_HTTPClient(HTTPClient):
 
 if __name__ == "__main__":
     connect = HC_HTTPClient()
-    data = connect.get_data(URL_INDEX)
+    data = connect.scrapping(URL_INDEX)
+
+    # with open("./app/resources/page_data.txt", "w", encoding="utf-8") as file:
+    #    file.write(**data[0])
+
+    # with open("./app/resources/website_data.txt", "w", encoding="utf-8") as file:
+    #    file.write(**data[1])
+
     print(data)
+    # print("\n\n")
+    # print(data[1])

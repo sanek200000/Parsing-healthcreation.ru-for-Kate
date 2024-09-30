@@ -5,6 +5,7 @@ __pycache__/
 
 # My
 cookies.json
+*.ipynb
 
 # C extensions
 *.so
