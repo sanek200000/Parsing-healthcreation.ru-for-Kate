@@ -2,6 +2,7 @@ import json
 import requests
 from time import sleep
 from bs4 import BeautifulSoup
+from helper.logging import logger
 from random import randint as rnd
 from helper.folders import get_path
 from helper.download_video import DownloadHLS
@@ -37,18 +38,19 @@ class HC_HTTPClient(HTTPClient):
                 self._session.cookies.update(cookies_dict)
                 response = self._session.get(url=URL_INDEX, headers=HEADERS)
                 status_code = response.status_code
-            except:
+            except Exception as ex:
+                logger.error("Failed to load cookie file.")
                 status_code = 400
 
         # If the cookie does not exist or the cookie is out of date
         if status_code > 201:
-            # We raise the session by login and password,
-            # we dump cookies to a file
+            # Raise the session by login and password,
+            # dump cookies to a file
             response = self._session.post(url=URL_LOGIN, headers=HEADERS, data=DATA)
             self.dump_cookies()
-            print("Enter with login.")
+            logger.debug("Login with login and password.")
         else:
-            print("Enter with cookies.")
+            logger.debug("Logged in using cookies.")
 
     @staticmethod
     def save_html(path: str, source: str) -> None:
@@ -60,6 +62,7 @@ class HC_HTTPClient(HTTPClient):
         """
         with open(path + INDEX, "w") as file:
             file.write(source)
+            logger.debug(f"File {path + INDEX} saved.")
 
     def __make_magic(
         self,
@@ -91,6 +94,7 @@ class HC_HTTPClient(HTTPClient):
             "url": course_url,
             "children": list(),
         }
+        logger.debug(f"{page_data = }")
 
         # If there are child links on the page
         if course_url:
@@ -122,15 +126,17 @@ class HC_HTTPClient(HTTPClient):
         sleep(rnd(1, 3))  # we sleep so as not to overload the server
 
         # Get response from server,
-        # parse response data with bs4
         src = self._session.get(url=url, headers=HEADERS)
-        print(src.status_code, url)
+        logger.debug(f"{src.status_code, url}")
+
+        # Parse response data with bs4
         soup = BeautifulSoup(src.text, "lxml")
 
         # We search for combinations of tags on the page,
         # if we find the necessary combination,
         # we collect the data and write it into the dictionary
         if soup.find("table", class_="stream-table"):
+            logger.info(f"soup.find('table', class_='stream-table')")
 
             # we find all tags with links, take each link and title,
             # and recursively send it for processing
@@ -142,6 +148,7 @@ class HC_HTTPClient(HTTPClient):
                 self.__make_magic(path, cours_name, course_url, src, website_data)
 
         elif soup.find_all("div", class_="link title"):
+            logger.info(f'soup.find_all("div", class_="link title")')
 
             trs = soup.find_all("div", class_="link title")
             for tr in trs:
@@ -151,6 +158,7 @@ class HC_HTTPClient(HTTPClient):
                 self.__make_magic(path, cours_name, course_url, src, website_data)
 
         elif soup.find_all("strong", class_="redactor-inline-converted"):
+            logger.info(f'soup.find_all("strong", class_="redactor-inline-converted")')
 
             trs = soup.find_all("strong", class_="redactor-inline-converted")
             for tr in trs:
@@ -163,6 +171,7 @@ class HC_HTTPClient(HTTPClient):
 
         # or, if we find a video, we save it
         elif soup.find("iframe", class_="vhi-iframe js--vhi-iframe"):
+            logger.info(f'soup.find("iframe", class_="vhi-iframe js--vhi-iframe")')
 
             # find frame with link to video player
             player_url = soup.find("iframe", class_="vhi-iframe js--vhi-iframe").get(
@@ -175,7 +184,7 @@ class HC_HTTPClient(HTTPClient):
                 src = self._session.get(player_url)
                 soup = BeautifulSoup(src.text, "lxml")
 
-                # We find all the tags with the script,
+                # We find all the tags with the <script>,
                 # among them we find the one that starts with "window.configs = ",
                 # we pull out the dictionary with the player settings from it
                 trs = soup.find_all("script")
@@ -207,6 +216,7 @@ class HC_HTTPClient(HTTPClient):
         cookies_dict = self._session.cookies.get_dict()
         with open(COOKIES_PATH, "w", encoding="utf-8") as file:
             json.dump(cookies_dict, file)
+            logger.info(f"Dump cookies to {COOKIES_PATH}")
 
 
 if __name__ == "__main__":

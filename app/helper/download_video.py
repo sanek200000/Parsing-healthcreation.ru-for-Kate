@@ -1,6 +1,7 @@
 import os
 import m3u8
 from requests import Session
+from helper.logging import logger
 
 
 class DownloadHLS:
@@ -15,8 +16,7 @@ class DownloadHLS:
         """
         self.path = path
         self.playlist_url = m3u8.load(playlist_url).playlists[-1].uri
-
-        # print(f'Max resolution {main_playlist.playlists[-1].stream_info.resolution}')
+        logger.info(f"Download video path: {self.path}, url: {self.playlist_url}")
 
     def get_hls_video(self, session: Session, output_file="output_video.ts") -> str:
         """The module downloads HLS video.
@@ -32,6 +32,7 @@ class DownloadHLS:
         # Form a path to a video file and check its existence
         video_path = os.path.join(self.path, output_file)
         if os.path.exists(video_path):
+            logger.info(f"File {video_path} has already been downloaded.")
             return f"File {video_path} has already been downloaded."
 
         # If the file does not exist, we parse the link using the m3u8 module
@@ -58,6 +59,7 @@ class DownloadHLS:
                 # get response by segment
                 response = session.get(segment_url)
                 print(f"Downloading the segment {i+1}/{len(segments)}: {segment_url}")
+                # logger.info(f"Downloading the segment {i+1}/{len(segments)}: {segment_url}")
 
                 count = 0
                 while count < 10:
@@ -70,9 +72,9 @@ class DownloadHLS:
                     else:
                         count += 1
                         response = session.get(segment_url)
-                        print(
-                            f"Failed to download segment: {segment_url}.",
-                            f"Attempt #.{count}",
+                        logger.debug(
+                            f"Failed to download segment: {segment_url}. Attempt №{count}"
                         )
 
+        logger.info(f"Download complete, video saved to file: {video_path}")
         return f"Download complete, video saved to file: {video_path}"
