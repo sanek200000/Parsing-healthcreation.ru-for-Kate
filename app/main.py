@@ -2,6 +2,8 @@ import json
 from http_client import HC_HTTPClient
 from helper.config import URL_INDEX
 
+# TODO: настроить логирование
+
 if __name__ == "__main__":
     connect = HC_HTTPClient()
     data = connect.scrapping(URL_INDEX)
