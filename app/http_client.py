@@ -2,10 +2,11 @@ import json
 import requests
 from time import sleep
 from bs4 import BeautifulSoup
-from helper.logging import logger
+from helper.logs import logger
 from random import randint as rnd
 from helper.folders import get_path
 from helper.download_video import DownloadHLS
+from helper.async_download_video import AsyncDownloadHLS
 from helper.config import HEADERS, URL_LOGIN, URL_INDEX, DATA, COOKIES_PATH
 
 
@@ -205,9 +206,13 @@ class HC_HTTPClient(HTTPClient):
                 page_data = {"title": "players_list", "url": players_list_url}
                 website_data.append(page_data)
 
-                # send a list of videos to the module for downloading video content
-                download = DownloadHLS(players_list_url, path)
-                print(download.get_hls_video(session=self._session))
+                ## Send a list of videos to the module for downloading video content
+                # download = DownloadHLS(players_list_url, path)
+                # print(download.get_hls_video(session=self._session))
+
+                # Send a list of videos to the module for async downloading video content
+                download = AsyncDownloadHLS(players_list_url, path)
+                print(download.run_async())
 
         return website_data
 

@@ -1,7 +1,7 @@
 import os
 import m3u8
 from requests import Session
-from helper.logging import logger
+from helper.logs import logger
 
 
 class DownloadHLS:
@@ -53,8 +53,6 @@ class DownloadHLS:
                         os.path.dirname(self.playlist_url),
                         segment_url,
                     )
-
-                # TODO: попробовать многопоточный request
 
                 # get response by segment
                 response = session.get(segment_url)

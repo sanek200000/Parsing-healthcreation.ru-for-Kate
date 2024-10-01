@@ -1,5 +1,5 @@
 import json
-from helper.logging import logger
+from helper.logs import logger
 from http_client import HC_HTTPClient
 from helper.config import URL_INDEX
 
