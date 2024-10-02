@@ -1,6 +1,6 @@
 from loguru import logger
 
-FILE_PATH = "./app/logs/src.log"
+FILE_PATH = "./app/logs/app.log"
 
 # logger.remove()
 logger.add(
