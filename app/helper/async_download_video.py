@@ -120,7 +120,10 @@ class DownloadHLSAsync:
         logger.info(f"Скачивание завершено. Видео сохранено в файл: {video_path}")
 
     @staticmethod
-    def preparing_dirs(path: str, output_file="output_video.ts") -> tuple[str, bool]:
+    def preparing_dirs(
+        path: str,
+        output_file="output_video.ts",
+    ) -> tuple[str, str, bool]:
         """The module generates a path to the file and a path to temporary files
 
         Args:
@@ -128,7 +131,10 @@ class DownloadHLSAsync:
             output_file (str, optional): video file name. Defaults to "output_video.ts".
 
         Returns:
-            tuple: tuple with paths and checking the existence of the file
+            tuple:
+                - video_path (str): path to video file
+                - temp_dir (str): path to tempary directory of video segments
+                - is_path (bool): check if video file exists
         """
 
         # Form a path to a video file,
