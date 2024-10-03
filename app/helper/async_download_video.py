@@ -46,24 +46,41 @@ class DownloadHLSAsync:
         output_dir: str,
         progress_bar: IB,
     ) -> None:
-        """Асинхронная функция для загрузки одного сегмента."""
+        """Asynchronous function to load a single segment.
+
+        Args:
+            session (aiohttp.ClientSession): aiohttp session
+            segment_url (str): link to video segment
+            index (int): index by video segment
+            output_dir (str): path to temporary folder for video segments
+            progress_bar (progress.bar.IncrementalBar): progress bar
+        """
 
         try:
             async with session.get(segment_url) as response:
-                if response.status == 200:
-                    segment_path = os.path.join(output_dir, f"segment_{index}.ts")
-                    with open(segment_path, "wb") as f:
-                        content = await response.read()
-                        f.write(content)
-                    progress_bar.next()
-                else:
-                    logger.error(
-                        f"Error downloading segment {index}: {response.status}"
-                    )
+                count = 0
+                while count < 10:
+                    # If you failed to download a video segment, try again.
+                    # We have 10 attempts.
+                    if response.status == 200:
+                        segment_path = os.path.join(output_dir, f"segment_{index}.ts")
+                        with open(segment_path, "wb") as f:
+                            content = await response.read()
+                            f.write(content)
+                        break
+                    else:
+                        count += 1
+                        response = session.get(segment_url)
+                        logger.error(
+                            f"Failed to download segment: {segment_url}. Attempt №{count}"
+                        )
+                progress_bar.next()
         except Exception as ex:
             logger.error(f"Error downloading segment {index}: {ex}")
 
     async def download_hls_playlist(self) -> None:
+        """The module downloads HLS video."""
+
         video_path, temp_dir, is_path = self.preparing_dirs(self.path)
 
         # Check video file existence
@@ -103,24 +120,44 @@ class DownloadHLSAsync:
         logger.info(f"Скачивание завершено. Видео сохранено в файл: {video_path}")
 
     @staticmethod
-    def preparing_dirs(path: str, output_file="output_video.ts") -> tuple:
-        # Form a path to a video file
+    def preparing_dirs(path: str, output_file="output_video.ts") -> tuple[str, bool]:
+        """The module generates a path to the file and a path to temporary files
+
+        Args:
+            path (str): path to parent folder
+            output_file (str, optional): video file name. Defaults to "output_video.ts".
+
+        Returns:
+            tuple: tuple with paths and checking the existence of the file
+        """
+
+        # Form a path to a video file,
+        # check if file exists
         video_path = os.path.join(path, output_file)
         is_path = os.path.exists(video_path)
 
         # Create a temporary folder for segments
         temp_dir = os.path.join(path, "temp_segments")
-        os.makedirs(temp_dir, exist_ok=True)
+        if not is_path:
+            os.makedirs(temp_dir, exist_ok=True)
 
         return video_path, temp_dir, is_path
 
     @staticmethod
-    def merge_segments(video_path, len_segments, temp_dir) -> None:
+    def merge_segments(video_path: str, len_segments: int, temp_dir: str) -> None:
+        """Merge segments of video. After delete temporary segment files
+        along with the folder.
+
+        Args:
+            video_path (str): path to video file
+            len_segments (int): list size with segments
+            temp_dir (str): path to temporary directory with video segments
+        """
         # Merge all segments into a file
-        with IB("Merge segments:", max=len_segments, width=80) as progress_bar:
+        with IB("Merge chunks:", max=len_segments, width=80) as progress_bar:
             with open(video_path, "wb") as f_out:
-                for i in range(len_segments):
-                    segment_path = os.path.join(temp_dir, f"segment_{i}.ts")
+                for idx in range(len_segments):
+                    segment_path = os.path.join(temp_dir, f"segment_{idx}.ts")
                     if os.path.exists(segment_path):
                         with open(segment_path, "rb") as f_in:
                             f_out.write(f_in.read())
@@ -130,6 +167,7 @@ class DownloadHLSAsync:
         shutil.rmtree(temp_dir)
 
     def run_async(self) -> None:
+        """Run async download HLS video"""
         asyncio.run(self.download_hls_playlist())
 
 
