@@ -3,12 +3,18 @@ import m3u8
 import aiohttp
 import asyncio
 import shutil
+import m3u8.model
 from progress.bar import IncrementalBar as IB
 
 from helper.logging_app import logger
 
 
 class DownloadHLSAsync:
+    path: str
+    playlist_url: str
+    segments: m3u8.model.SegmentList
+    __initialized: bool
+
     def __init__(self, players_list_url: str, path: str):
         """When initializing the class, we get a link to the streaming
         video playlist in the format m3u8, write it to the variable self.playlist_url.
@@ -34,8 +40,7 @@ class DownloadHLSAsync:
             self.__initialized = False
             logger.error(f"Error in class {__class__}: {ex}")
 
-    @property
-    def is_init(self):
+    def __call__(self) -> bool:
         return self.__initialized
 
     async def download_segment(

@@ -212,7 +212,7 @@ class HC_HTTPClient(HTTPClient):
 
                 # Send a list of videos to the module for async downloading video content
                 download = DownloadHLSAsync(players_list_url, path)
-                if download.is_init:
+                if download():
                     download.run_async()
 
         return website_data
