@@ -17,3 +17,4 @@ attrs==24.2.0
 frozenlist==1.4.1 
 multidict==6.1.0 
 yarl==1.13.1
+progress==1.6

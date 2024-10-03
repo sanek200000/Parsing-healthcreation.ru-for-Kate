@@ -1,7 +1,7 @@
 import os
 import m3u8
 from requests import Session
-from helper.logs import logger
+from helper.logging_app import logger
 
 
 class DownloadHLS:
