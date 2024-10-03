@@ -1,7 +1,8 @@
 import json
-from helper.logging_app import logger
 from http_client import HC_HTTPClient
+
 from helper.config import URL_INDEX
+from helper.logging_app import logger
 
 
 if __name__ == "__main__":
